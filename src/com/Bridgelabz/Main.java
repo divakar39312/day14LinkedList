@@ -6,18 +6,16 @@ public class Main {
 	public static void main(String[] args) {
 		/**
 		 * creating object of linkedlist class 
-		 * added values throgh add method and display 56 > 30 > 56
-		 * then using pop method deleting Node data means first data then printing 30 > 70
+		 * added values throgh add method and display 56 > 70
+		 * using pop method deleting Node data and add 30 in between
 		 * 
 		 */
 
-		Linkedlist list = new Linkedlist();
+		Linkedlist<Object> list = new Linkedlist<Object>();
 		list.add(56);
 		list.add(30);
 		list.add(70);
 		list.display();
-		list.pop(56);
+		list.pop(70);
 		list.display();
-
-	}
-}
+	}}

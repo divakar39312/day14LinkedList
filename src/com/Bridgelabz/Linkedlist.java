@@ -1,7 +1,7 @@
 package com.Bridgelabz;
 
 
-public class Linkedlist {
+public class Linkedlist<T> {
 
 	Node head;
 	Node tail;
@@ -62,10 +62,37 @@ public class Linkedlist {
 //            head = newNode;
 //        }
 //    }
-	public void pop(int data) {
+
+//	public void insertBetween( int data, int newNode) {
+//		Node newNode = new Node(data);
+//		if (head == null) {
+//			head = newNode;
+//			tail = newNode;
+//		Node tempNode = prevNode.next;
+//		prevNode.next = newNode;
+//		newNode.next = tempNode;
+//	}
+
+
+
+	public Object pop(int data) {
 		/**
-		 * deleting head data
+		 * finding second last node as temp
+		 * and temp.next means the last node defined as null
+		 * 
 		 */
-		this.head = this.head.next;
+		if (head == null) {
+			return null;
+		}
+		if (head.next == null) {
+			return null;
+		}
+		Node temp = head;
+		while (temp.next.next != null)
+			temp = temp.next;
+
+		temp.next = null;
+
+		return head;
 	}
 }
