@@ -17,10 +17,8 @@ public class Main {
         list.add(40);
         list.add(70);
         list.display();
-        list.size();
-        list.deleteANode(40);
+        list.sortList();
         list.display();
-        list.size();
 	}
 	
 }

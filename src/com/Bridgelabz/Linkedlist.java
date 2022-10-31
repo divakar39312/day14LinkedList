@@ -1,5 +1,6 @@
 package com.Bridgelabz;
 
+
 public class Linkedlist<T> {
 
 	Node head;
@@ -8,7 +9,7 @@ public class Linkedlist<T> {
 	/**
 	 * 
 	 * @param data
-	 * @return 
+	 * @return
 	 */
 
 	public Linkedlist<?> add(int data) {
@@ -27,7 +28,6 @@ public class Linkedlist<T> {
 		return null;
 	}
 
-
 	public void display() {
 		/**
 		 * displaying the data(s) from node(s)
@@ -40,25 +40,23 @@ public class Linkedlist<T> {
 		System.out.println("\n");
 	}
 
-
-	 public Node searchInsert(int value, Node newNode) {
-		 Node tempNode = head;
-		 if(head == null) {
-			 System.out.println("List is Empty");
-		 }
-		 else {
-			 while(tempNode != null) {
-				 if(tempNode.data == value) {
-					 break;
-				 }
-				 tempNode = tempNode.next;
-			 }
-			 Node tempNodeNext = tempNode.next;
-			 	  tempNode.next = newNode;
-				newNode.next = tempNodeNext;
-		 }
+	public Node searchInsert(int value, Node newNode) {
+		Node tempNode = head;
+		if (head == null) {
+			System.out.println("List is Empty");
+		} else {
+			while (tempNode != null) {
+				if (tempNode.data == value) {
+					break;
+				}
+				tempNode = tempNode.next;
+			}
+			Node tempNodeNext = tempNode.next;
+			tempNode.next = newNode;
+			newNode.next = tempNodeNext;
+		}
 		return tempNode;
-	 }
+	}
 
 //	public Node search(int data) {
 //		/**
@@ -73,35 +71,61 @@ public class Linkedlist<T> {
 //		}
 //		return null;
 //	}
-	 
-	 public void deleteANode(int value) {
-		 /**
-		  * deleting a data
-		  */
-		 if(this.head == null) {
-			 System.out.println("Sorry no data !!!");
-			 return;
-		 }
+
+	public void deleteANode(int value) {
+		/**
+		 * deleting a data
+		 */
+		if (this.head == null) {
+			System.out.println("Sorry no data !!!");
+			return;
+		}
 		Node tempNode = head;
-		while(tempNode.next.data != value) {
+		while (tempNode.next.data != value) {
 			tempNode = tempNode.next;
 		}
 		Node prvNode = tempNode;
 		Node nextNode = tempNode.next.next;
 		prvNode.next = nextNode;
-	 }
-	
-	 public int size() {
-			/**
-			 * size of the linkedlist
-			 */
-			Node temp = head;
-			int count = 0;
-			while (temp != null) {
-				temp = temp.next;
-				count++;
-			}
-			return count;
+	}
+
+	public int size() {
+		/**
+		 * size of the linkedlist
+		 */
+		Node temp = head;
+		int count = 0;
+		while (temp != null) {
+			temp = temp.next;
+			count++;
 		}
-    
+		return count;
+	}
+
+	public void sortList() {
+		/**
+		 * sorting the values of all nodes
+		 * defining Node current is head
+		 * index is defining head.next
+		 * if head.next is greater than head then
+		 */
+		Node current = head;
+		Node index = null;
+		if (head == null) {
+			return;
+		} else {
+			while (current != null) {
+				index = current.next;
+				while (index != null) {
+					if (current.data > index.data) {
+						int temp = current.data;
+						current.data = index.data;
+						index.data = temp;
+					}
+					index = index.next;
+				}
+				current = current.next;
+			}
+		}
+	}
 }
