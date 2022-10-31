@@ -2,17 +2,22 @@ package com.Bridgelabz;
 
 public class Main {
 	
+
 	public static void main(String[] args) {
 		/**
-		 * creating object of linkedlist class added values throgh push method display
-		 * input 56 at first the appended 30 then appended 70
-		 * values through display method
+		 * creating object of linkedlist class 
+		 * added values throgh add method and display 56 > 70
+		 * using pop method deleting Node data and add 30 in between
+		 * 
 		 */
 
-		Linkedlist list = new Linkedlist();
+		Linkedlist<Object> list = new Linkedlist<Object>();
+		list.add(70);
 		list.add(56);
-		list.addNodeAtFirst(30);
-		list.addNodeAtFirst(70);
+		list.display();
+		list.pop(70);
+		list.add(30);
+		list.add(70);
 		list.display();
 	}
 }
