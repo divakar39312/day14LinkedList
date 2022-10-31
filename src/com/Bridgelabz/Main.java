@@ -10,12 +10,15 @@ public class Main {
 		 * using pop method deleting Node data and add 30 in between
 		 * 
 		 */
-
 		Linkedlist<Object> list = new Linkedlist<Object>();
 		list.add(56);
 		list.add(30);
 		list.add(70);
+		list.add(30);
+		list.add(20);
+		list.add(30);
 		list.display();
-		list.pop(70);
-		list.display();
-	}}
+		list.search(30);
+	}
+	
+}

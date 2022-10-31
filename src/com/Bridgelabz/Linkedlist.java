@@ -73,26 +73,38 @@ public class Linkedlist<T> {
 //		newNode.next = tempNode;
 //	}
 
+//	public Object pop(int data) {
+//		/**
+//		 * finding second last node as temp
+//		 * and temp.next means the last node defined as null
+//		 * 
+//		 */
+//		if (head == null) {
+//			return null;
+//		}
+//		if (head.next == null) {
+//			return null;
+//		}
+//		Node temp = head;
+//		while (temp.next.next != null)
+//			temp = temp.next;
+//
+//		temp.next = null;
+//
+//		return head;
+//	}
 
-
-	public Object pop(int data) {
+	public Node search(int data) {
 		/**
-		 * finding second last node as temp
-		 * and temp.next means the last node defined as null
-		 * 
+		 * searching all data with value given
 		 */
-		if (head == null) {
-			return null;
-		}
-		if (head.next == null) {
-			return null;
-		}
 		Node temp = head;
-		while (temp.next.next != null)
+		while (temp != null) {
+			if (temp.data == data) {
+				System.out.println(temp.data);
+			}
 			temp = temp.next;
-
-		temp.next = null;
-
-		return head;
+		}
+		return null;
 	}
 }
