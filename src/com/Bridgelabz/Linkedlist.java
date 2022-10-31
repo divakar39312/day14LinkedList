@@ -34,4 +34,18 @@ public class Linkedlist {
 			temp = temp.next;
 		}
 	}
+	public void push(int data) {
+		/**
+		 * adding values
+		 */
+        Node newNode = new Node(data);
+        if (head == null){
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            newNode.next = head;
+            head = newNode;
+        }
+    }
 }
