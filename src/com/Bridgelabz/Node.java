@@ -6,7 +6,7 @@ public class Node {
 	Node next;
 /**
  * 
- * @param data initialize variable
+ * @param data initialize variables
  */
 	Node(int data) {
 		this.data = data;
